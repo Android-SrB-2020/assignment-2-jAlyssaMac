@@ -27,22 +27,28 @@
 
         <TextView
             android:id="@+id/question_textView"
-            android:layout_width="411dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:gravity="center_horizontal"
             android:text="@{question}"
             android:textColor="#009688"
+            android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/answer_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="140dp"
+            android:layout_height="108dp"
             android:gravity="center_horizontal"
             android:text="@{answer}"
+            android:textAllCaps="true"
+            android:textColor="#F44336"
+            android:textSize="36sp"
+            android:textStyle="bold"
             android:visibility="invisible"
             app:layout_constraintBottom_toTopOf="@+id/Disclaimer"
             app:layout_constraintEnd_toEndOf="parent"

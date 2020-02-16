@@ -8,8 +8,8 @@
     <fragment
         android:id="@+id/cheatFragment"
         android:name="com.example.assignmenttwo.CheatFragment"
-        android:label="fragment_cheat"
-        tools:layout="@layout/fragment_cheat" >
+        android:label="Cheat?"
+        tools:layout="@layout/fragment_cheat">
         <action
             android:id="@+id/action_cheatFragment_to_aboutFragment"
             app:destination="@id/aboutFragment" />
@@ -23,8 +23,8 @@
     <fragment
         android:id="@+id/aboutFragment"
         android:name="com.example.assignmenttwo.AboutFragment"
-        android:label="fragment_about"
-        tools:layout="@layout/fragment_about" >
+        android:label="About"
+        tools:layout="@layout/fragment_about">
         <action
             android:id="@+id/action_aboutFragment_to_cheatFragment"
             app:destination="@id/cheatFragment" />
@@ -32,8 +32,8 @@
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.example.assignmenttwo.MainFragment"
-        android:label="fragment_main"
-        tools:layout="@layout/fragment_main" >
+        android:label="Rick And Morty Quiz"
+        tools:layout="@layout/fragment_main">
         <action
             android:id="@+id/action_mainFragment_to_cheatFragment"
             app:destination="@id/cheatFragment" />
