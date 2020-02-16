@@ -57,6 +57,10 @@ class MainFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        if (savedInstanceState != null) {
+            answer = savedInstanceState.getString(KEY_ANSWER, "")
+            question = savedInstanceState.getString(KEY_QUESTION, "")
+        }
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(
             inflater,
@@ -155,4 +159,9 @@ class MainFragment : Fragment() {
         }
     }
 
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putString(KEY_QUESTION, question_textView.text.toString())
+        outState.putString(KEY_ANSWER, answer_text.text.toString())
+    }
 }

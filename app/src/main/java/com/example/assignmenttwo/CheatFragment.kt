@@ -10,9 +10,14 @@ import androidx.databinding.DataBindingUtil
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import com.example.assignmenttwo.databinding.FragmentCheatBinding
+import kotlinx.android.synthetic.main.fragment_cheat.*
+
 /**
  * A simple [Fragment] subclass.
  */
+
+
+
 class CheatFragment : Fragment() {
     private lateinit var binding: FragmentCheatBinding
 
@@ -24,6 +29,11 @@ class CheatFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+        if (savedInstanceState != null) {
+            answer = savedInstanceState.getString(KEY_ANSWER, "")
+            question = savedInstanceState.getString(KEY_QUESTION, "")
+        }
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(
             inflater,
@@ -56,6 +66,12 @@ class CheatFragment : Fragment() {
                 activity!!.onBackPressed()
             }
         }
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putString(KEY_QUESTION, question_textView.text.toString())
+        outState.putString(KEY_ANSWER, answer_text.text.toString())
     }
 
 
